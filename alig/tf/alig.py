@@ -48,7 +48,7 @@ class AliGwithMomentum(tf.compat.v1.train.MomentumOptimizer):
         self.eps = eps
 
     def minimize(self, loss, global_step=None, var_list=None,
-                 gate_gradients=tf.train.Optimizer.GATE_OP, aggregation_method=None,
+                 gate_gradients=tf.compat.v1.train.Optimizer.GATE_OP, aggregation_method=None,
                  colocate_gradients_with_ops=False, name=None,
                  grad_loss=None):
         return minimize(self, loss, global_step=global_step, var_list=var_list,
