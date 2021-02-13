@@ -5,7 +5,7 @@ except ImportError:
 
 
 def minimize(optimizer, loss, global_step=None, var_list=None,
-             gate_gradients=tf.train.Optimizer.GATE_OP, aggregation_method=None,
+             gate_gradients=tf.compat.v1.train.Optimizer.GATE_OP, aggregation_method=None,
              colocate_gradients_with_ops=False, name=None,
              grad_loss=None):
     """
@@ -36,7 +36,7 @@ def minimize(optimizer, loss, global_step=None, var_list=None,
                                 name=name)
 
 
-class AliGwithMomentum(tf.train.MomentumOptimizer):
+class AliGwithMomentum(tf.compat.v1.train.MomentumOptimizer):
     """Optimizer that implements the AliG algorithm.
     """
 
@@ -57,7 +57,7 @@ class AliGwithMomentum(tf.train.MomentumOptimizer):
                         grad_loss=grad_loss)
 
 
-class AliGwithoutMomentum(tf.train.GradientDescentOptimizer):
+class AliGwithoutMomentum(tf.compat.v1.train.GradientDescentOptimizer):
     """Optimizer that implements the AliG algorithm.
     """
 
